@@ -8,7 +8,7 @@ export default async function Home() {
   console.log(donts);
 
   return (
-    <main className="pt-12">
+    <main className="pt-24 flex flex-col items-center">
       <Header />
     </main>
   );
