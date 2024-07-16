@@ -1,4 +1,5 @@
 import  { getDonts } from "@/actions/action";
+import Header from "@/components/header";
 import dbConnect from "@/lib/db";
 
 export default async function Home() {
@@ -7,8 +8,8 @@ export default async function Home() {
   console.log(donts);
 
   return (
-    <main className="">
-      <h1>Hello World</h1>
+    <main className="pt-12">
+      <Header />
     </main>
   );
 }
