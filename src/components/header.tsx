@@ -1,12 +1,15 @@
+import { Waiting_for_the_Sunrise } from "next/font/google"
+
+const waiting_for_the_sunrise = Waiting_for_the_Sunrise({
+  subsets: ["latin"],
+  weight: "400"
+})
+
 export default function Header() {
   return (
-    <div className="text-center flex gap-x-24 text-4xl">
-      <h1>To</h1>
-      <div className="relative">
-        <h1 className="absolute line-through">Do</h1>
-        <h1 className="absolute ">Don&apos;t</h1>
-      </div>
-      <h1>List</h1>
+    <div className={`${waiting_for_the_sunrise.className} relative`}>
+      <h1 className="text-center text-8xl">To <span className="line-through">Do</span> List</h1>
+      <h1 className="absolute text-center text-6xl -top-12 left-[25%] rotate-12 underline">Don&apos;t</h1>
     </div>
   )
 }
