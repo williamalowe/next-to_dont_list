@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 const dontSchema = new mongoose.Schema({
-	dont: {
+	task: {
 		type: String,
 		required: true,
 	},

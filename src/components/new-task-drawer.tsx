@@ -3,8 +3,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { BsPlus } from "react-icons/bs";
+import NewTaskForm from "./new-task-form";
 
-export default function NewTaskDrawer() {
+export default function NewTaskDrawer({ frequency }: {
+  frequency: string,
+}) {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   return (
@@ -29,7 +32,9 @@ export default function NewTaskDrawer() {
               y: -24,
             }}
           >
-            FORM HERE
+            <NewTaskForm
+            frequency={frequency} 
+            />
           </motion.div>
         )}
       </AnimatePresence>
