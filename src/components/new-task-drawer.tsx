@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { BsPlus } from "react-icons/bs";
+import { BsDash, BsPlus } from "react-icons/bs";
 import NewTaskForm from "./new-task-form";
 
 export default function NewTaskDrawer({ frequency }: {
@@ -13,7 +13,9 @@ export default function NewTaskDrawer({ frequency }: {
   return (
     <div className="flex flex-col items-center">
       <button onClick={() => setOpenDrawer(!openDrawer)}>
-        <BsPlus className="text-4xl" />
+        {
+          openDrawer ? <BsDash  className="text-4xl opacity-50"/> : <BsPlus  className="text-4xl opacity-50"/>
+        }
       </button>
       <AnimatePresence mode="popLayout">
         {openDrawer && (
@@ -21,7 +23,7 @@ export default function NewTaskDrawer({ frequency }: {
             className=""
             initial={{
               opacity: 0,
-              y: -24,
+              y: -12,
             }}
             animate={{
               opacity: 1,
@@ -29,11 +31,12 @@ export default function NewTaskDrawer({ frequency }: {
             }}
             exit={{
               opacity: 0,
-              y: -24,
+              y: -12,
             }}
           >
             <NewTaskForm
-            frequency={frequency} 
+              frequency={frequency}
+              closeDrawer={() => setOpenDrawer(false)}
             />
           </motion.div>
         )}
