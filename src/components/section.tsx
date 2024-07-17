@@ -1,3 +1,5 @@
+import NewTaskDrawer from "./new-task-drawer"
+
 type Dont = {
   _id: string,
   dont: string,
@@ -18,7 +20,7 @@ export default function Section({ header, listItems }: {
         </li>
       )}
       </ul>
-
+      <NewTaskDrawer />
     </section>
   )
 }
