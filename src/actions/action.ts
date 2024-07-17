@@ -27,4 +27,4 @@ const deleteDont = async (id: string) => {
 	await Dont.findOneAndDelete({"_id": id});
 }
 
-export { getDonts, addDont, updateScore }
+export { getDonts, addDont, updateScore, deleteDont }

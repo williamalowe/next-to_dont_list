@@ -1,5 +1,4 @@
 import { updateScore } from '@/actions/action'
-import React from 'react'
 import { BsHandThumbsDown, BsHandThumbsUp } from 'react-icons/bs'
 
 export default function ScoreUpdate({ id, score }: {
