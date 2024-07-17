@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 const dontSchema = new mongoose.Schema({
-	dont: {
+	task: {
 		type: String,
 		required: true,
 	},
@@ -10,7 +10,7 @@ const dontSchema = new mongoose.Schema({
 		required: true,
 	},
 	score: {
-		type: String,
+		type: Number,
 		required: true,
 	},
 })
