@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
 import NewTaskDrawer from "./new-task-drawer"
+import ScoreUpdate from "./score-update"
 
 type Dont = {
   _id: string,
@@ -32,7 +33,10 @@ export default function Section({ header, frequency }: {
       <ul className="mt-4 flex flex-col gap-y-2">
         {data.map((dont: Dont) => 
         <li key={dont._id} className="ml-6 list-disc">
+          <div className="flex items-center gap-x-4">
           <p className="text-4xl p-2 bg-orange-300 rounded-full">{dont.task} <span className={`${dont.score < 0 ? 'text-red-600' : dont.score > 0 ? 'text-green-600' : 'text-black/50'} font-bold ml-auto`}>{dont.score}</span></p>
+          <ScoreUpdate id={dont._id} score={dont.score}/>
+          </div>
         </li>
       )}
       </ul>
