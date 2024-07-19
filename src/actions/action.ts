@@ -16,4 +16,15 @@ const getDonts = async () => {
 	return Dont.find()
 }
 
-export { getDonts, addDont }
+const updateScore = async (id: string, score: number) => {
+	let target = { _id: id };
+	let updatedScore = { score: score }
+	await Dont.findOneAndUpdate(target, updatedScore)
+}
+
+const deleteDont = async (id: string) => {
+	let target = { _id: id };
+	await Dont.findOneAndDelete({"_id": id});
+}
+
+export { getDonts, addDont, updateScore, deleteDont }

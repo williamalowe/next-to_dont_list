@@ -5,7 +5,6 @@ import dbConnect from "@/lib/db";
 
 export default async function Home() {
   await dbConnect();
-  const donts = await getDonts();
 
   return (
     <main className="pt-24 flex flex-col items-center">
