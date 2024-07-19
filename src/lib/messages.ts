@@ -1,12 +1,17 @@
 const positiveMsg = [
   "Well done!",
-  "Killing it!",
+  "You rock!",
   "Keep it up!",
   "Proud of you!",
   "Crushing it!",
   "Aww yeah!",
   "Legendary!",
-  "You rock!"
+  "Awesome work!",
+  "You did it!",
+  "You're amazing!",
+  "Wow!",
+  "Incredible!",
+  "Fantastic!"
 ]
 const negativeMsg = [
   "Oh no...",
@@ -16,7 +21,11 @@ const negativeMsg = [
   "We can do it!",
   "Little slip up.",
   "Unlucky!",
-  "These things take time."
+  "These things take time.",
+  "Stay strong!",
+  "You've got this!",
+  "Don't stress.",
+  "I believe in you!"
 ]
 export {positiveMsg, negativeMsg};
 
