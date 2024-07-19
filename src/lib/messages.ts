@@ -8,4 +8,15 @@ const positiveMsg = [
   "Legendary!",
   "You rock!"
 ]
-export default positiveMsg;
+const negativeMsg = [
+  "Oh no...",
+  "Let's try again.",
+  "It'll get easier.",
+  "Keep at it!",
+  "We can do it!",
+  "Little slip up.",
+  "Unlucky!",
+  "These things take time."
+]
+export {positiveMsg, negativeMsg};
+

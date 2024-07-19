@@ -2,7 +2,7 @@ import { updateScore } from "@/actions/action";
 import { BsHandThumbsDown, BsHandThumbsUp } from "react-icons/bs";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import positiveMsg from "@/lib/messages";
+import {positiveMsg, negativeMsg} from "@/lib/messages";
 
 export default function ScoreUpdate({
   id,
@@ -12,6 +12,7 @@ export default function ScoreUpdate({
   score: number;
 }) {
   const [showPositive, setShowPositive] = useState(false);
+  const [showNegative, setShowNegative] = useState(false);
   const [updateMessage, setUpdateMessage] = useState("");
 
   const handlePositiveUpdate = () => {
@@ -20,7 +21,15 @@ export default function ScoreUpdate({
     setShowPositive(true);
     setTimeout(() => {
       setShowPositive(false);
-    }, 2000)
+    }, 1000)
+  };
+  const handleNegativeUpdate = () => {
+    updateScore(id, score - 1);
+    setUpdateMessage(negativeMsg[Math.ceil(Math.random() * negativeMsg.length - 1)])
+    setShowNegative(true);
+    setTimeout(() => {
+      setShowNegative(false);
+    }, 1000)
   };
 
   return (
@@ -28,7 +37,7 @@ export default function ScoreUpdate({
       <AnimatePresence mode="popLayout">
         {showPositive === true && (
           <motion.p
-            className="absolute z-50 text-green-600 font-bold text-base w-fit"
+            className="absolute z-50 text-green-600 font-bold text-base w-[200px]"
             initial={{
               opacity: 0,
               y: 0,
@@ -55,9 +64,35 @@ export default function ScoreUpdate({
       >
         <BsHandThumbsUp className="text-green-600" />
       </button>
-      <p className="absolute -top-8 -right-8 text-red-600">test</p>
+      <AnimatePresence mode="popLayout">
+        {showNegative === true && (
+          <motion.p
+            className="absolute z-50 text-red-600 font-bold text-base w-[200px]"
+            initial={{
+              opacity: 0,
+              scale: 0,
+              y: 0,
+              x: 0,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: -32,
+              x: 32
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0,
+              y: 0,
+              x: 0,
+            }}
+          >
+            {updateMessage}
+          </motion.p>
+        )}
+      </AnimatePresence>
       <button
-        onClick={() => updateScore(id, score - 1)}
+        onClick={handleNegativeUpdate}
         className="hover:scale-110 transition"
       >
         <BsHandThumbsDown className="text-red-600" />
