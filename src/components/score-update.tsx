@@ -78,7 +78,7 @@ export default function ScoreUpdate({
               opacity: 1,
               scale: 1,
               y: -32,
-              x: 32
+              x: -32
             }}
             exit={{
               opacity: 0,
