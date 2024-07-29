@@ -11,7 +11,7 @@ export default function NewTaskDrawer({ frequency }: {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center justify-center">
       <button onClick={() => setOpenDrawer(!openDrawer)}>
         {
           openDrawer ? <BsDash  className="text-4xl opacity-50"/> : <BsPlus  className="text-4xl opacity-50"/>
@@ -20,7 +20,7 @@ export default function NewTaskDrawer({ frequency }: {
       <AnimatePresence mode="popLayout">
         {openDrawer && (
           <motion.div
-            className=""
+          className="w-full flex flex-col"
             initial={{
               opacity: 0,
               y: -12,
