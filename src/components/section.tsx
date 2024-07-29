@@ -33,8 +33,8 @@ export default function Section({ header, frequency }: {
       <h3 className="text-4xl sm:text-6xl font-bold">{header}</h3>
       <ul className="mt-4 flex flex-col gap-y-2">
         {data.map((dont: Dont) => 
-        <li key={dont._id} className="ml-6 list-disc">
-          <div className="relative flex items-center gap-x-4">
+        <li key={dont._id} className="">
+          <div className="relative flex items-center justify-center gap-x-4">
             <p className="text-xl sm:text-4xl px-4 bg-orange-300 rounded-full">{dont.task} <span className={`${dont.score < 0 ? 'text-red-600' : dont.score > 0 ? 'text-green-600' : 'text-black/50'} font-bold ml-auto`}>{dont.score}</span></p>
             <ScoreUpdate id={dont._id} score={dont.score}/>
             <DeleteButton id={dont._id}/>
