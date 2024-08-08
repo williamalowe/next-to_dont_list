@@ -2,7 +2,7 @@
 
 import Dont from '@/models/Donts'
 
-const addDont = async dont => {
+const addDont = async (dont: { get: (arg0: string) => any }) => {
 	const task = dont.get('task')
 	const frequency = dont.get('frequency')
 	const score = 0
